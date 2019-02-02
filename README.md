@@ -1,4 +1,4 @@
-# ChoirGenius to OneCallNow
+# ChoirGenius to MailChimp
 
 Update mailchimp users from a choir genius user export.
 
