@@ -1,20 +1,22 @@
 {
-  "name": "choirgenius-to-mailchimp",
+  "name": "choir-tools",
   "version": "1.0.0",
   "description": "convert choir genius members to mailchimp imports",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier \"**/*.{js,json,css,md}\" --write"
+    "prettier": "prettier \"**/*.{js,json,css,md}\" --write",
+    "test": "yarn start",
+    "start": "node ."
   },
-  "author": "",
+  "author": "Michael Barlock <barlockm@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "choirgenius": "^1.0.0",
     "csvjson": "^5.1.0",
     "dotenv": "^6.2.0",
     "fs-extra": "^7.0.1",
     "lodash": "^4.17.11",
-    "mailchimp-api-v3": "^1.12.1",
-    "yargs": "^12.0.5"
+    "mailchimp-api-v3": "^1.12.1"
   },
   "devDependencies": {
     "prettier": "^1.16.1"
