@@ -16,7 +16,8 @@
     "dotenv": "^6.2.0",
     "fs-extra": "^7.0.1",
     "lodash": "^4.17.11",
-    "mailchimp-api-v3": "^1.12.1"
+    "mailchimp-api-v3": "^1.12.1",
+    "soap": "^0.26.0"
   },
   "devDependencies": {
     "prettier": "^1.16.1"

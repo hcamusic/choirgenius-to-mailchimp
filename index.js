@@ -10,8 +10,12 @@ const password = process.env.CHOIR_GENIUS_PASSWORD;
 const main = async () => {
   await choirGenius.login(username, password);
   const members = await choirGenius.getMembers();
+  const chorusMembers = members.filter(member =>
+    member.roles.includes('Member')
+  );
 
-  await updateMailChimp(members);
+  console.log(chorusMembers);
+  // await updateMailChimp(chorusMembers);
 };
 
 main().catch(err => {

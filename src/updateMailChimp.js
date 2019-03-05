@@ -5,12 +5,9 @@ const _ = require('lodash');
 const mailchimp = new Mailchimp(process.env.MAILCHIMP_API_KEY);
 const listId = process.env.MAILCHIMP_LIST_ID;
 
-module.exports = async choirGeniusMembers => {
+module.exports = async chorusMembers => {
   console.log('Updating MailChimp');
 
-  const chorusMembers = choirGeniusMembers.filter(member =>
-    member.roles.includes('Member')
-  );
   const chorusMemberMap = _.keyBy(chorusMembers, member => member.email);
   const chorusMemberEmails = Object.keys(chorusMemberMap);
 
