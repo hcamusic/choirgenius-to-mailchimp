@@ -11,10 +11,10 @@
   "author": "Michael Barlock <barlockm@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "choirgenius": "^1.0.0",
+    "choirgenius": "^1.1.0",
     "csvjson": "^5.1.0",
-    "dotenv": "^6.2.0",
-    "fs-extra": "^7.0.1",
+    "dotenv": "^8.2.0",
+    "fs-extra": "^8.0.0",
     "lodash": "^4.17.11",
     "mailchimp-api-v3": "^1.12.1"
   },
