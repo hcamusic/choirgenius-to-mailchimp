@@ -8,9 +8,10 @@ const listId = process.env.MAILCHIMP_LIST_ID;
 module.exports = async choirGeniusMembers => {
   console.log('Updating MailChimp');
 
-  const chorusMembers = choirGeniusMembers.filter(member =>
-    member.roles.includes('Member')
-  );
+  const chorusMembers = choirGeniusMembers
+    .filter(member => member.roles.includes('Member'))
+    .filter(member => !member.roles.includes('Inactive Member'));
+
   const chorusMemberMap = _.keyBy(chorusMembers, member => member.email);
   const chorusMemberEmails = Object.keys(chorusMemberMap);
 
@@ -58,9 +59,7 @@ module.exports = async choirGeniusMembers => {
 
   if (batchActions.length > 0) {
     console.log(
-      `Adding/Updating ${emailsToUpdate.length}, removing ${
-        emailsToRemove.length
-      }`
+      `Adding/Updating ${emailsToUpdate.length}, removing ${emailsToRemove.length}`
     );
 
     const results = await mailchimp.batch(batchActions);

@@ -13,7 +13,7 @@ const main = async () => {
     member.roles.includes('Member')
   );
 
-  console.log(chorusMembers.map(member => member.email).join(', '))
+  console.log(chorusMembers.map(member => member.email).join(', '));
 };
 
 main().catch(err => {
