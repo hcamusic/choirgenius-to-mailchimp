@@ -13,8 +13,8 @@ create a .env file with needed variables.
 ```env
 MAILCHIMP_API_KEY=
 MAILCHIMP_LIST_ID=
-CHOIR_GENIUS_USERNAME=
-CHOIR_GENIUS_PASSWORD=
+HARMONYSITE_USERNAME=
+HARMONYSITE_PASSWORD=
 ```
 
 Run the updating script.

@@ -1,20 +1,21 @@
 require('dotenv').config();
 
-const ChoirGenius = require('choirgenius');
+const HarmonySite = require('harmonysite');
 const updateMailChimp = require('./src/updateMailChimp');
 
-const choirGenius = new ChoirGenius('https://hcamusic.org');
-const username = process.env.CHOIR_GENIUS_USERNAME;
-const password = process.env.CHOIR_GENIUS_PASSWORD;
+const harmonysite = new HarmonySite('https://www.hcamusic.org');
+const username = process.env.HARMONYSITE_USERNAME;
+const password = process.env.HARMONYSITE_PASSWORD;
+const activeMemberGrouping = 3;
 
 const main = async () => {
-  await choirGenius.login(username, password);
-  const members = await choirGenius.getMembers();
+  await harmonysite.login(username, password);
+  const members = await harmonysite.members.list(activeMemberGrouping);
 
   await updateMailChimp(members);
 };
 
-main().catch(err => {
+main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
